@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+.stop{
+    background-color:lightsteelblue;
+    height: 100vh;
+}
+.watch{
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50%);
+}
+.watch p{
+    position: relative;
+    display: inline-block;
+    color: #ffffff;
+    z-index: 9999;
+    font-size: 45px;
+    margin-bottom: 120px;
+}
+.watch p::before{
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #151538;
+    z-index: -1;
+    border-radius: 50%;
+	left: -10%;
+    top: -118%;
+    animation-name: shine;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+@keyframes shine{
+    0%,100%{
+        box-shadow: 0px 0px 32px -12px rgba(246, 180, 0, .5);
+    }
+    50%{
+        box-shadow: 0px 0px 32px 3px rgba(246, 180, 0, .5);
+    }
+}
+button{
+    background-color: #151538;
+    padding: 10px 38px;
+    border: 1px solid #511515;
+    border-radius: 28px;
+    color: #fff;
+    transition: all .2s ease;
+    outline: 0;
+}
+button:not(:last-child){
+    margin-right: 20px;
+}
+button:hover,
+button:focus
+{
+    border-color: #F6B400;
+    color: #F6B400;
+    box-shadow: 0px 4px 27px -12px #F6B400;
+}
+button a{
+    color: #fff;
+}
+.lap{
+    list-style: none;
+    color: #fff;
+}
+.number{
+    color: #cccccc;
+}
+.time-stamp{
+    display: inline-block;
+    margin-left: 25px;
+}
