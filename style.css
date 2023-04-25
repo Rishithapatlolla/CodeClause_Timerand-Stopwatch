@@ -4,46 +4,65 @@
     font-family: 'Source Sans Pro', sans-serif;
 
 }
-.stop{
-    background-color:lightsteelblue;
-    height: 100vh;
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color:#000;
 }
-.watch{
+.container{
+    position: relative;
+}
+
+.clock{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgba(225, 238, 240, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 0px 30px rgba(3, 84, 84, 0.189);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock span{
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i))); 
+    inset: 12px;
     text-align: center;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate( -50%, -50%);
+    color:#fff;
 }
-.watch p{
-    position: relative;
+
+.clock span b{
+    transform: rotate(calc(-30deg * var(--i)));
     display: inline-block;
-    color: #ffffff;
-    z-index: 9999;
-    font-size: 45px;
-    margin-bottom: 120px;
+    font-size: 20px;
 }
-.watch p::before{
+
+.clock::before{
     content: '';
     position: absolute;
-    width: 200px;
-    height: 200px;
-    background-color: #151538;
-    z-index: -1;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-	left: -10%;
-    top: -118%;
-    animation-name: shine;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
+    background-color: #fff;
+    z-index: 2;
 }
-@keyframes shine{
-    0%,100%{
-        box-shadow: 0px 0px 32px -12px rgba(246, 180, 0, .5);
-    }
-    50%{
-        box-shadow: 0px 0px 32px 3px rgba(246, 180, 0, .5);
-    }
+
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.hand i{
+    position: absolute;
+    background-color: var(--clr);
+    width: 4px;
+    height: var(--h);
+    border-radius: 8px;
 }
 button{
     background-color: #151538;
